@@ -3,16 +3,26 @@
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject _gun;
-    private Vector3 offset = new Vector3(1.06f, 1.92f, -0.28f);
+    [SerializeField] private GameObject _placeForGun;
 
-    public void Fight(GameObject target)
+    public GameObject Rival;
+
+    public void Fight()
     {
-        gameObject.GetComponent<Patrol>().CanPatrol = false;
-        gameObject.transform.LookAt(target.transform.position);
-        var position = gameObject.transform.position + offset;
-        Debug.Log(position);
-        _gun.transform.position = position;
+        var patrol = gameObject.GetComponent<Patrol>();
+        if(patrol != null)
+        {
+            patrol.CanPatrol = false;
+        }
+        gameObject.transform.LookAt(Rival.transform.position);
+        _gun.transform.position = _placeForGun.transform.position;
         var rotation = gameObject.transform.rotation;
         _gun.transform.rotation = rotation;
+        var gun = _gun.GetComponent<Gun>();
+        if(gun != null)
+        {
+            gun.Target = Rival;
+            gun.StartShoot();
+        }
     }
 }

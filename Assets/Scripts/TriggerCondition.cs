@@ -8,10 +8,14 @@ public class TriggerCondition : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("enter on trigger");
         if(other.GetComponent<PlayerController>() || other.GetComponent<AutoMove>())
         {
-            _patrol.GetComponent<EnemyController>().Fight(other.gameObject);
+            var enemyController = _patrol.GetComponent<EnemyController>();
+            if(enemyController != null)
+            {
+                enemyController.Rival = other.gameObject;
+                enemyController.Fight();
+            }
         }
     }
 }
