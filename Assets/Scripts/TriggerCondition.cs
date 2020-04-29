@@ -8,13 +8,17 @@ public class TriggerCondition : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<PlayerController>() || other.GetComponent<AutoMove>())
+        if (other.GetComponent<PlayerController>() || other.GetComponent<AutoMove>())
         {
             var enemyController = _patrol.GetComponent<EnemyController>();
             if(enemyController != null)
             {
-                enemyController.Rival = other.gameObject;
-                enemyController.Fight();
+                if (!enemyController.IsBusy)
+                {
+                    enemyController.Rival = other.gameObject;
+                    enemyController.Fight();
+                    enemyController.IsBusy = true;
+                }
             }
         }
     }

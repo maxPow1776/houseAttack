@@ -24,9 +24,12 @@ public class PlayerController : MonoBehaviour
                 _navMeshAgent.SetDestination(raycastHit.point);
                 for(int i = 0; i < _team.Length; i++)
                 {
-                    var autoMove = _team[i].GetComponent<AutoMove>();
-                    if (autoMove != null)
-                        autoMove.FollowMe(new Vector3(raycastHit.point.x + _distance[i].x, raycastHit.point.y, raycastHit.point.z + _distance[i].z));
+                    if (_team[i] != null)
+                    {
+                        var autoMove = _team[i].GetComponent<AutoMove>();
+                        if (autoMove != null)
+                            autoMove.FollowMe(new Vector3(raycastHit.point.x + _distance[i].x, raycastHit.point.y, raycastHit.point.z + _distance[i].z));
+                    }
                 }
             }
         }

@@ -5,6 +5,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject _gun;
     [SerializeField] private GameObject _placeForGun;
 
+    public bool IsBusy = false;
     public GameObject Rival;
 
     public void Fight()
