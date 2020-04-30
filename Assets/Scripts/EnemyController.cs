@@ -4,6 +4,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject _gun;
     [SerializeField] private GameObject _placeForGun;
+    [SerializeField] private GameObject _startPosition;
 
     public bool IsBusy = false;
     public GameObject Rival;
@@ -24,6 +25,23 @@ public class EnemyController : MonoBehaviour
         {
             gun.Target = Rival;
             gun.StartShoot();
+        }
+    }
+
+    public void StopFight()
+    {
+        var gun = _gun.GetComponent<Gun>();
+        if(gun != null)
+        {
+            gun.Target = null;
+            gun.StopShoot();
+        }
+        _gun.transform.position = _startPosition.transform.position;
+        _gun.transform.position = _startPosition.transform.position;
+        var patrol = gameObject.GetComponent<Patrol>();
+        if (patrol != null)
+        {
+            patrol.CanPatrol = true;
         }
     }
 }

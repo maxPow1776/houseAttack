@@ -20,4 +20,9 @@ public class Gun : MonoBehaviour
             currentBullet.BulletShoot(Target);
         }
     }
+
+    public void StopShoot()
+    {
+        CancelInvoke("Fight");
+    }
 }
