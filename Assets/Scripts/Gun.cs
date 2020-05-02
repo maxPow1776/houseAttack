@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
         InvokeRepeating("Shoot", 0, 2);
     }
 
-    private void Shoot()
+    public void Shoot()
     {
         var bullet = Instantiate(_bullet, _placeForBullet.transform.position, Quaternion.identity);
         var currentBullet = bullet.GetComponent<Bullet>();

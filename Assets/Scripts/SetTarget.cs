@@ -11,11 +11,14 @@ public class SetTarget : MonoBehaviour
         Debug.Log("press on mouse");
         for (int i = 0; i < _players.Length; i++)
         {
-            var fightWithEnemy = _players[i].GetComponent<FightWithEnemy>();
-            if (fightWithEnemy != null)
+            if (_players[i] != null)
             {
-                fightWithEnemy.Target = gameObject;
-                fightWithEnemy.StartFight();
+                var fightWithEnemy = _players[i].GetComponent<FightWithEnemy>();
+                if (fightWithEnemy != null)
+                {
+                    fightWithEnemy.Target = gameObject;
+                    fightWithEnemy.StartFight();
+                }
             }
         }
     }

@@ -13,7 +13,7 @@ public class FightWithEnemy : MonoBehaviour
         if(gun != null)
         {
             gun.Target = Target;
-            gun.StartShoot();
+            gun.Shoot();
         }
     }
 }

@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class Bullet : MonoBehaviour
 {
     private GameObject _target;
-    [SerializeField] private float speed;
     [SerializeField] private int damage;
+    private NavMeshAgent _navMeshAgent;
+
+    private void Start()
+    {
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+        Debug.Log("Bullet was instantiate");
+    }
 
     public void BulletShoot(GameObject Target)
     {
@@ -14,22 +21,25 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         if (_target != null)
-            transform.position = Vector3.MoveTowards(transform.position, _target.transform.position, Time.deltaTime * speed);
+            _navMeshAgent.SetDestination(_target.transform.position);
         else
             Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        var character = _target.GetComponent<Character>();
-        if(character != null)
+        if (_target != null)
         {
-            character.Hp -= damage;
-            if(character.Hp <= 0)
+            var character = _target.GetComponent<Character>();
+            if (character != null)
             {
-                character.Death();
+                character.Hp -= damage;
+                if (character.Hp <= 0)
+                {
+                    character.Death();
+                }
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
         }
     }
 }
