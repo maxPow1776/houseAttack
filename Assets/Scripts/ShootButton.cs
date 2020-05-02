@@ -4,32 +4,31 @@ public class ShootButton : MonoBehaviour
 {
     [SerializeField] private GameObject[] _enemies;
 
-    public void Start()
-    {
-        for (int i = 0; i < _enemies.Length; i++)
-        {
-            var setTarget = _enemies[i].GetComponent<SetTarget>();
-            if (setTarget != null)
-            {
-                Debug.Log(setTarget.enabled);
-                setTarget.enabled = false;
-                Debug.Log(setTarget.enabled);
-            }
-        }
-    }
-
     public void SetTarget()
     {
         for(int i = 0; i < _enemies.Length; i++)
         {
             if (_enemies[i] != null)
             {
-                var setTarget = _enemies[i].GetComponent<SetTarget>();
-                if (setTarget != null)
+                var capsuleCollider = _enemies[i].GetComponent<CapsuleCollider>();
+                if (capsuleCollider != null)
                 {
-                    Debug.Log(setTarget.enabled);
-                    setTarget.enabled = true;
-                    Debug.Log(setTarget.enabled);
+                    capsuleCollider.enabled = true;
+                }
+            }
+        }
+    }
+
+    public void CancleTarget()
+    {
+        for (int i = 0; i < _enemies.Length; i++)
+        {
+            if (_enemies[i] != null)
+            {
+                var capsuleCollider = _enemies[i].GetComponent<CapsuleCollider>();
+                if (capsuleCollider != null)
+                {
+                    capsuleCollider.enabled = false;
                 }
             }
         }

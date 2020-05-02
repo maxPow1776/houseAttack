@@ -6,6 +6,7 @@ public class FightWithEnemy : MonoBehaviour
 {
     public GameObject Target;
     [SerializeField] private GameObject _gun;
+    [SerializeField] private GameObject _interface;
 
     public void StartFight()
     {
@@ -14,6 +15,11 @@ public class FightWithEnemy : MonoBehaviour
         {
             gun.Target = Target;
             gun.Shoot();
+        }
+        var shootButton = _interface.GetComponent<ShootButton>();
+        if (shootButton != null)
+        {
+            shootButton.CancleTarget();
         }
     }
 }

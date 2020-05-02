@@ -8,7 +8,6 @@ public class SetTarget : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("press on mouse");
         for (int i = 0; i < _players.Length; i++)
         {
             if (_players[i] != null)
