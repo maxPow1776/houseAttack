@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
     {
         if (gameObject.GetComponent<PlayerController>())
         {
-            SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("FirstLevel", LoadSceneMode.Single);
         }
         if (gameObject.GetComponent<EnemyController>() || gameObject.GetComponent<AutoMove>())
         {

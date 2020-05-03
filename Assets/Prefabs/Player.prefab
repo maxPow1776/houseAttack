@@ -736,6 +736,7 @@ GameObject:
   - component: {fileID: -8515340436143676337}
   - component: {fileID: -2172798000051739582}
   - component: {fileID: 7573004882498018978}
+  - component: {fileID: -8729504969845477650}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -885,6 +886,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   _gun: {fileID: 1896348921624232167}
+  _interface: {fileID: 0}
+--- !u!114 &-8729504969845477650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585627407873223950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f528bb4c29711c042bbdc2425b07c70f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  _bombPrefab: {fileID: 8116294040515925623, guid: e159bbf62a69567459fa947a7599bdc8,
+    type: 3}
+  _interface: {fileID: 0}
+  _placeForBomb: {fileID: 6441996218932042439}
 --- !u!1 &2585627407873223952
 GameObject:
   m_ObjectHideFlags: 0
