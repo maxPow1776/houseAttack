@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ThrowBomb : MonoBehaviour
@@ -16,7 +15,6 @@ public class ThrowBomb : MonoBehaviour
         if (currentBomb != null)
         {
             currentBomb.Target = Target;
-            //currentBomb.Shoot();
         }
 
         var bombButton = _interface.GetComponent<BombButton>();
