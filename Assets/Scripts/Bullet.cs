@@ -10,7 +10,6 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        Debug.Log("Bullet was instantiate");
     }
 
     public void BulletShoot(GameObject Target)
