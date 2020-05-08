@@ -5,33 +5,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviourPunCallbacks
+public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     [SerializeField] private GameObject _playerPrefab;
     [SerializeField] private GameObject _firstPosition;
     [SerializeField] private GameObject _secondPosition;
+    private PhotonView _photonView;
+    private bool _isFirst = true;
+    private int count = 0;
 
     void Start()
     {
-        Vector3 currentPosition = Vector3.zero;
-        var firstPosition = _firstPosition.GetComponent<Position>();
-        if(firstPosition != null)
+        _photonView = GetComponent<PhotonView>();
+        if (_isFirst)
         {
-            if(firstPosition.IsEmpty)
-            {
-                currentPosition = _firstPosition.transform.position;
-                firstPosition.IsEmpty = false;
-            } else
-            {
-                var secondPosition = _secondPosition.GetComponent<Position>();
-                if(secondPosition != null)
-                {
-                    currentPosition = _secondPosition.transform.position;
-                    secondPosition.IsEmpty = false;
-                }
-            }
+            PhotonNetwork.Instantiate(_playerPrefab.name, _firstPosition.transform.position, Quaternion.identity);
+            Debug.Log("Instantiate " + count);
+            count++;
+            Debug.Log("Instantiate " + count);
+            if (_photonView.IsMine)
+                _isFirst = false;
         }
-        PhotonNetwork.Instantiate(_playerPrefab.name, currentPosition, Quaternion.identity);
+        else
+            PhotonNetwork.Instantiate(_playerPrefab.name, _secondPosition.transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -53,10 +49,22 @@ public class GameManager : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Debug.Log("Player enter " + newPlayer.NickName);
+        Debug.Log("Player enter " + newPlayer.NickName + count);
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         Debug.Log("Player left " + otherPlayer.NickName);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if(stream.IsWriting)
+        {
+            stream.SendNext(count);
+        } else
+        {
+            count = (int)stream.ReceiveNext();
+        }
     }
 }
