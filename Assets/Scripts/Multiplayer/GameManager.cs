@@ -10,15 +10,22 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject _playerPrefab;
     [SerializeField] private GameObject _firstPosition;
     [SerializeField] private GameObject _secondPosition;
+    public GameObject FollowCamera;
 
     void Start()
     {
+        GameObject target = null;
         if (PhotonNetwork.CurrentRoom.PlayerCount > 1)
         {
-            PhotonNetwork.Instantiate(_playerPrefab.name, _secondPosition.transform.position, new Quaternion(0f, 180f, 0f, 0f));
+            target = PhotonNetwork.Instantiate(_playerPrefab.name, _secondPosition.transform.position, new Quaternion(0f, 180f, 0f, 0f));
         }
         else
-            PhotonNetwork.Instantiate(_playerPrefab.name, _firstPosition.transform.position, Quaternion.identity);
+            target = PhotonNetwork.Instantiate(_playerPrefab.name, _firstPosition.transform.position, Quaternion.identity);
+        var followCamera = FollowCamera.GetComponent<FollowCamera>();
+        if(followCamera != null )
+        {
+            followCamera.Target = target;
+        }
     }
 
     public void Exit()
