@@ -267,11 +267,11 @@ GameObject:
   - component: {fileID: 8029090328209015732}
   - component: {fileID: 8029090328209015731}
   - component: {fileID: 8029090328209015734}
-  - component: {fileID: -7358187054896872693}
   - component: {fileID: 4657440030010336805}
   - component: {fileID: 4678310101378447089}
   - component: {fileID: 2837556671532639974}
   - component: {fileID: 1994538737036343003}
+  - component: {fileID: -4283748822092766555}
   m_Layer: 0
   m_Name: PlayerMultiplayer
   m_TagString: Untagged
@@ -395,21 +395,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 40
---- !u!114 &-7358187054896872693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8029090328591087627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e45d365f64adf4cb6122ec79809a08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  _gun: {fileID: 5600227374793475395}
-  _interface: {fileID: 0}
 --- !u!114 &4657440030010336805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +460,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  _shootButton: {fileID: 0}
+  ShootButton: {fileID: 0}
+--- !u!114 &-4283748822092766555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029090328591087627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ee9a1e2ba0ada4889e3b05b4e196a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  _gun: {fileID: 5600227374793475395}
+  Interface: {fileID: 0}
 --- !u!1 &8029090328591087629
 GameObject:
   m_ObjectHideFlags: 0

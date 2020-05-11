@@ -13,11 +13,11 @@ public class SetTargetForMultiplayer : MonoBehaviour
     {
         if (Player != null)
         {
-            var fightWithEnemy = Player.GetComponent<FightWithEnemy>();
-            if (fightWithEnemy != null)
+            var fightWithEnemyForMultiplayer = Player.GetComponent<FightWithEnemyForMultiplayer>();
+            if (fightWithEnemyForMultiplayer != null)
             {
-                fightWithEnemy.Target = gameObject;
-                fightWithEnemy.StartFight();
+                fightWithEnemyForMultiplayer.Target = gameObject;
+                fightWithEnemyForMultiplayer.StartFight();
             }
         }
         ShootButton.interactable = false;

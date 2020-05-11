@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             setTargetForMultiplayer.ShootButton = _shootButton;
         }
+        var fightWithEnemyForMultiplayer = target.GetComponent<FightWithEnemyForMultiplayer>();
+        if(fightWithEnemyForMultiplayer != null)
+        {
+            fightWithEnemyForMultiplayer.Interface = _interface;
+        }
         var followCamera = FollowCamera.GetComponent<FollowCamera>();
         if(followCamera != null )
         {
