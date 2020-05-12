@@ -22,7 +22,7 @@ public class WinPanel : MonoBehaviour
                 _count++;
             }
         }
-        if (_count == 4)
+        if (_count == _enemies.Length)
             WinGame();
     }
 
