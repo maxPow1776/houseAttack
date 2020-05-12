@@ -3941,7 +3941,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 428069994}
+      objectReference: {fileID: 428069993}
     - target: {fileID: 2573221720101060620, guid: 808c395da3fede74aa7a23b3401fbe6c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -3971,24 +3971,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 428069992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08fc996de19be224da608be7c7e6f8f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemies:
-  - {fileID: 1199358464}
-  - {fileID: 731699277}
-  - {fileID: 449041728}
-  - {fileID: 1994458296}
---- !u!114 &428069994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428069992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b63dffe2120fca84ebf9a60479181f12, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c064340e0503464cb5ebde0bd53a61e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemies:
@@ -13640,9 +13623,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 201810386920368901, guid: 8b0625a054f10114baf0466831a73c99,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: _bombButton
+      value: 
+      objectReference: {fileID: 1625576098}
+    - target: {fileID: 737431366397155979, guid: 8b0625a054f10114baf0466831a73c99,
+        type: 3}
+      propertyPath: _shootButton
       value: 
       objectReference: {fileID: 1625576098}
     - target: {fileID: 2837112295814884407, guid: 8b0625a054f10114baf0466831a73c99,
@@ -14744,9 +14731,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 201810386920368901, guid: 8b0625a054f10114baf0466831a73c99,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: _bombButton
+      value: 
+      objectReference: {fileID: 1625576098}
+    - target: {fileID: 737431366397155979, guid: 8b0625a054f10114baf0466831a73c99,
+        type: 3}
+      propertyPath: _shootButton
       value: 
       objectReference: {fileID: 1625576098}
     - target: {fileID: 2837112295814884407, guid: 8b0625a054f10114baf0466831a73c99,

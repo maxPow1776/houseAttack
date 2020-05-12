@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
-public class ShootButton : MonoBehaviour
+public class AttackButton : MonoBehaviour
 {
     [SerializeField] private GameObject[] _enemies;
 
     public void SetTarget()
     {
-        for(int i = 0; i < _enemies.Length; i++)
+        for (int i = 0; i < _enemies.Length; i++)
         {
             if (_enemies[i] != null)
             {
-                var capsuleCollider = _enemies[i].GetComponent<CapsuleCollider>();
+                var capsuleCollider = _enemies[i].GetComponent<BoxCollider>();
                 if (capsuleCollider != null)
                 {
                     capsuleCollider.enabled = true;
@@ -25,7 +25,7 @@ public class ShootButton : MonoBehaviour
         {
             if (_enemies[i] != null)
             {
-                var capsuleCollider = _enemies[i].GetComponent<CapsuleCollider>();
+                var capsuleCollider = _enemies[i].GetComponent<BoxCollider>();
                 if (capsuleCollider != null)
                 {
                     capsuleCollider.enabled = false;

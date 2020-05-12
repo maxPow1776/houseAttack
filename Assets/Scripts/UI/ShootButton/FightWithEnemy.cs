@@ -16,7 +16,7 @@ public class FightWithEnemy : MonoBehaviour
             gun.Shoot();
         }
         
-        var shootButton = _interface.GetComponent<ShootButton>();
+        var shootButton = _interface.GetComponent<AttackButton>();
         if (shootButton != null)
         {
             shootButton.CancleTarget();
