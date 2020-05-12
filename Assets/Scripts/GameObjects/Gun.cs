@@ -1,17 +1,20 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private GameObject _placeForBullet;
     public GameObject Target;
+    public EnemyController Player;
 
     public void StartShoot()
     {
-        InvokeRepeating("Shoot", 0, 2);
+        //InvokeRepeating("Shoot", 0, 2);
+        StartCoroutine(Shoot());
     }
 
-    public void Shoot()
+    public void OneShoot()
     {
         var bullet = Instantiate(_bullet, _placeForBullet.transform.position, Quaternion.identity);
         var currentBullet = bullet.GetComponent<Bullet>();
@@ -21,8 +24,18 @@ public class Gun : MonoBehaviour
         }
     }
 
-    public void StopShoot()
+    //public void StopShoot()
+    //{
+    //    CancelInvoke("Shoot");
+    //}
+
+    IEnumerator Shoot()
     {
-        CancelInvoke("Fight");
+        while (Target != null)
+        {
+            yield return new WaitForSeconds(2);
+            OneShoot();
+        }
+        Player.StopFight();
     }
 }

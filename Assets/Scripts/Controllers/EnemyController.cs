@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
         var gun = _gun.GetComponent<Gun>();
         if(gun != null)
         {
+            gun.Player = this;
             gun.Target = Rival;
             gun.StartShoot();
         }
@@ -30,12 +31,12 @@ public class EnemyController : MonoBehaviour
 
     public void StopFight()
     {
-        var gun = _gun.GetComponent<Gun>();
-        if(gun != null)
-        {
-            gun.Target = null;
-            gun.StopShoot();
-        }
+        //var gun = _gun.GetComponent<Gun>();
+        //if(gun != null)
+        //{
+        //    gun.Target = null;
+        //    gun.StopShoot();
+        //}
         _gun.transform.position = _startPosition.transform.position;
         _gun.transform.position = _startPosition.transform.position;
         var patrol = gameObject.GetComponent<Patrol>();
