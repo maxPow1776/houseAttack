@@ -4,8 +4,8 @@ using UnityEngine.AI;
 public class Bomb : MonoBehaviour
 {
     public GameObject Target;
-    [SerializeField] private int damage;
-    private NavMeshAgent _navMeshAgent;
+    public int damage;
+    public NavMeshAgent _navMeshAgent;
 
     private void Start()
     {
