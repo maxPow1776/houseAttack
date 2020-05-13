@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
 {
     public int Hp;
 
-    public void Death()
+    public virtual void Death()
     {
         if (gameObject.GetComponent<PlayerController>())
         {

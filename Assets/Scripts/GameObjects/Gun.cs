@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Gun : MonoBehaviour
 {
@@ -16,7 +17,12 @@ public class Gun : MonoBehaviour
 
     public void OneShoot()
     {
-        var bullet = Instantiate(_bullet, _placeForBullet.transform.position, Quaternion.identity);
+        var bullet = Instantiate(_bullet);
+        var bulletNavMeshAgent = bullet.GetComponent<NavMeshAgent>();
+        if(bulletNavMeshAgent != null)
+        {
+            bulletNavMeshAgent.Warp(_placeForBullet.transform.position);
+        }
         var currentBullet = bullet.GetComponent<Bullet>();
         if(currentBullet != null)
         {

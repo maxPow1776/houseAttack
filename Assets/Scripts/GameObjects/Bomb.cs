@@ -24,15 +24,28 @@ public class Bomb : MonoBehaviour
     {
         if (Target != null)
         {
-            var character = Target.GetComponent<Character>();
-            if (character != null)
+            var characterMultiplayer = Target.GetComponent<CharacterMultiplayer>();
+            if (characterMultiplayer != null)
             {
-                character.Hp -= damage;
-                if (character.Hp <= 0)
+                characterMultiplayer.Hp -= damage;
+                if (characterMultiplayer.Hp <= 0)
                 {
-                    character.Death();
+                    characterMultiplayer.Death();
                 }
                 Destroy(gameObject);
+            }
+            else
+            {
+                var character = Target.GetComponent<Character>();
+                if (character != null)
+                {
+                    character.Hp -= damage;
+                    if (character.Hp <= 0)
+                    {
+                        character.Death();
+                    }
+                    Destroy(gameObject);
+                }
             }
         }
     }

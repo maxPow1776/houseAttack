@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject _interface;
     [SerializeField] private Button  _shootButton;
     public GameObject FollowCamera;
+    public List<GameObject> _players = new List<GameObject>();
     //private PlayerControllerMultiplayer[] players;
     //[SerializeField] private List<GameObject> _targets = new List<GameObject>();
 
@@ -30,6 +31,9 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
         //players = FindObjectsOfType<PlayerControllerMultiplayer>();
         //UpdateEnemies(players);
+        var characterMultiplayer = target.GetComponent<CharacterMultiplayer>();
+        if (characterMultiplayer != null)
+            characterMultiplayer.GameManager = this;
         var fightWithEnemyForMultiplayer = target.GetComponent<FightWithEnemyForMultiplayer>();
         if(fightWithEnemyForMultiplayer != null)
         {
@@ -70,4 +74,23 @@ public class GameManager : MonoBehaviourPunCallbacks
     //        //updPlayers[i].gameObject.
     //    }
     //}
+
+    public void EndGame(GameObject loser)
+    {
+        var shootButton = _interface.GetComponent<ShootButtonForMultiplayer>();
+        if(shootButton != null)
+        {
+            _players = shootButton._enemies;
+        }
+        for(int i = 0; i < _players.Count; i++)
+        {
+            if(_players[i].GetComponent<PhotonView>().IsMine)
+            {
+                Debug.Log("Owner");
+            } else
+            {
+                Debug.Log("Not owner");
+            }
+        }
+    }
 }
