@@ -460,7 +460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  ShootButton: {fileID: 0}
 --- !u!114 &-4283748822092766555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +475,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   _gun: {fileID: 5600227374793475395}
   Interface: {fileID: 0}
+  ShootButton: {fileID: 0}
 --- !u!1 &8029090328591087629
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class SetTargetForMultiplayer : MonoBehaviour
 {
     public GameObject Player;
-    public Button ShootButton;
-
 
     private void OnMouseDown()
     {
@@ -20,6 +18,5 @@ public class SetTargetForMultiplayer : MonoBehaviour
                 fightWithEnemyForMultiplayer.StartFight();
             }
         }
-        ShootButton.interactable = false;
     }
 }

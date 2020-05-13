@@ -30,15 +30,11 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
         //players = FindObjectsOfType<PlayerControllerMultiplayer>();
         //UpdateEnemies(players);
-        var setTargetForMultiplayer = target.GetComponent<SetTargetForMultiplayer>();
-        if(setTargetForMultiplayer != null)
-        {
-            setTargetForMultiplayer.ShootButton = _shootButton;
-        }
         var fightWithEnemyForMultiplayer = target.GetComponent<FightWithEnemyForMultiplayer>();
         if(fightWithEnemyForMultiplayer != null)
         {
             fightWithEnemyForMultiplayer.Interface = _interface;
+            fightWithEnemyForMultiplayer.ShootButton = _shootButton;
         }
         var followCamera = FollowCamera.GetComponent<FollowCamera>();
         if(followCamera != null )
