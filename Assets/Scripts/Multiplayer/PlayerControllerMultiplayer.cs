@@ -21,7 +21,7 @@ public class PlayerControllerMultiplayer : MonoBehaviour
     private void Update()
     {
         if (!_photonView.IsMine) return;
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit raycastHit;
