@@ -13,7 +13,7 @@ public class FightWithEnemyForMultiplayer : MonoBehaviour
     public void StartFight()
     {
         ShootButton.interactable = false;
-        var gun = _gun.GetComponent<Gun>();
+        var gun = _gun.GetComponent<GunForMultiplayer>();
         if (gun != null)
         {
             gun.Target = Target;

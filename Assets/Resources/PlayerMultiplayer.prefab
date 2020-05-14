@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8844416001162790668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600227374793475395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30666a60e4d876645adb31869e054434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: 2822691925899589476, guid: eb4e8bc7523f1134284ec128f7875211, type: 3}
+  _placeForBullet: {fileID: 9135488313067880489}
+  Target: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!1 &8029090328591087617
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +417,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 4678310101378447089}
+  - {fileID: 9065293152126761007}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -475,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ac82796e7827440b84077f6f9e5973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 10
+  Hp: 40
   GameManager: {fileID: 0}
 --- !u!1 &8029090328591087629
 GameObject:
@@ -2448,7 +2465,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 20
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6549180956370000548, guid: 9879692c67e4ee74095dc7bcc01263d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9879692c67e4ee74095dc7bcc01263d7, type: 3}
 --- !u!1 &5600227374793475395 stripped
 GameObject:
