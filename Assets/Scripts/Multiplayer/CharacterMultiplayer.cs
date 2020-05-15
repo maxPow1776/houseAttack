@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using System;
+using UnityEngine.UI;
 
 public class CharacterMultiplayer : Character, IPunObservable
 {
@@ -10,6 +11,12 @@ public class CharacterMultiplayer : Character, IPunObservable
     //public List<GameObject> _players = new List<GameObject>();
     //public GameObject Interface;
     private bool _isAlive = true;
+    [SerializeField] private Text _hp;
+
+    public void Start()
+    {
+        _hp.text = Hp.ToString();
+    }
 
     public void FixedUpdate()
     {
@@ -41,5 +48,10 @@ public class CharacterMultiplayer : Character, IPunObservable
         {
             Hp = (int)stream.ReceiveNext();
         }
+    }
+
+    public void UpdateHp()
+    {
+        _hp.text = Hp.ToString();
     }
 }

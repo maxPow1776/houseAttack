@@ -1137,6 +1137,7 @@ MonoBehaviour:
   _interface: {fileID: 1880272008}
   _shootButton: {fileID: 1664106108}
   FollowCamera: {fileID: 297032204}
+  _players: []
 --- !u!4 &410931708
 Transform:
   m_ObjectHideFlags: 0

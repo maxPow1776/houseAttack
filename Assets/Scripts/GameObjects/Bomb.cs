@@ -28,6 +28,7 @@ public class Bomb : MonoBehaviour
             if (characterMultiplayer != null)
             {
                 characterMultiplayer.Hp -= damage;
+                characterMultiplayer.UpdateHp();
                 if (characterMultiplayer.Hp <= 0)
                 {
                     characterMultiplayer.Death();
