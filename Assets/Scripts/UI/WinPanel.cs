@@ -35,6 +35,6 @@ public class WinPanel : MonoBehaviour
     IEnumerator RestartGame()
     {
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("FirsLevel", LoadSceneMode.Single);
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 }

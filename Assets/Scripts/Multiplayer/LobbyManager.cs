@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
@@ -27,5 +28,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel("MultiplayerGame");
+    }
+
+    public void OnMainMenuButtonClick()
+    {
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 }
