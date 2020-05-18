@@ -19,7 +19,7 @@ public class AnimatoinsController : MonoBehaviour
     void Update()
     {
         _currentPosition = gameObject.transform.position;
-        if (Math.Abs(_currentPosition.x -_previousPosition.x) < 0.001 && Math.Abs(_currentPosition.z - _previousPosition.z) < 0.001)
+        if (Vector3.Distance(_previousPosition, _currentPosition) < 0.001)
             _animator.SetBool(_isRunning, false);
         else
         {
