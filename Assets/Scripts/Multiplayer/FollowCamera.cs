@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
     [SerializeField] private Vector3 _positionOffset;
-
     public GameObject Target;
 
     private void Update()

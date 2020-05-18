@@ -16,7 +16,6 @@ public class ThrowBomb : MonoBehaviour
         {
             currentBomb.Target = Target;
         }
-
         var bombButton = _interface.GetComponent<AttackButton>();
         if (bombButton != null)
         {

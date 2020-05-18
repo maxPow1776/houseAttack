@@ -1,10 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AnimatoinsController : MonoBehaviour
 {
-    //Мне не очень нравится, как происходит управление анимацией, но другого способа я не придумал. 
-    //Может быть вы можете что-нибудь посоветовать?
     private Vector3 _previousPosition;
     private Vector3 _currentPosition;
     private Animator _animator;

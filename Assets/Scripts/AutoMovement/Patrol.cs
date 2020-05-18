@@ -7,9 +7,7 @@ public class Patrol : MonoBehaviour
 
     private int _destPoint = 0;
     private NavMeshAgent _agent;
-
     public bool CanPatrol = true;
-
 
     private void Awake()
     {

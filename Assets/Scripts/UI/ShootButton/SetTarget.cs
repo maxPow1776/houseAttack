@@ -6,7 +6,6 @@ public class SetTarget : MonoBehaviour
     [SerializeField] private GameObject[] _players;
     [SerializeField] private Button _shootButton;
 
-
     private void OnMouseDown()
     {
         for (int i = 0; i < _players.Length; i++)

@@ -1,6 +1,4 @@
 ﻿using Photon.Pun;
-using Photon.Realtime;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,8 +13,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField] private Button  _shootButton;
     public GameObject FollowCamera;
     public List<GameObject> _players = new List<GameObject>();
-    //private PlayerControllerMultiplayer[] players;
-    //[SerializeField] private List<GameObject> _targets = new List<GameObject>();
 
     public void Start()
     {
@@ -29,8 +25,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             target = PhotonNetwork.Instantiate(_playerPrefab.name, _firstPosition.transform.position, Quaternion.identity);
         }
-        //players = FindObjectsOfType<PlayerControllerMultiplayer>();
-        //UpdateEnemies(players);
         var characterMultiplayer = target.GetComponent<CharacterMultiplayer>();
         if (characterMultiplayer != null)
             characterMultiplayer.GameManager = this;
@@ -57,40 +51,12 @@ public class GameManager : MonoBehaviourPunCallbacks
         SceneManager.LoadScene("Lobby");
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
-        Debug.Log("Player enter " + newPlayer.NickName);
-    }
-
-    public override void OnPlayerLeftRoom(Player otherPlayer)
-    {
-        Debug.Log("Player left " + otherPlayer.NickName);
-    }
-
-    //public void UpdateEnemies(PlayerControllerMultiplayer[] updPlayers)
-    //{
-    //    for(int i = 0; i < updPlayers.Length; i++)
-    //    {
-    //        //updPlayers[i].gameObject.
-    //    }
-    //}
-
     public void EndGame(GameObject loser)
     {
         var shootButton = _interface.GetComponent<ShootButtonForMultiplayer>();
         if(shootButton != null)
         {
             _players = shootButton._enemies;
-        }
-        for(int i = 0; i < _players.Count; i++)
-        {
-            if(_players[i].GetComponent<PhotonView>().IsMine)
-            {
-                Debug.Log("Owner");
-            } else
-            {
-                Debug.Log("Not owner");
-            }
         }
     }
 }

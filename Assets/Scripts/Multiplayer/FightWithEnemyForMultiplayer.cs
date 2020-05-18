@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class FightWithEnemyForMultiplayer : MonoBehaviour
@@ -19,20 +17,10 @@ public class FightWithEnemyForMultiplayer : MonoBehaviour
             gun.Target = Target;
             gun.OneShoot();
         }
-
         var shootButton = Interface.GetComponent<ShootButtonForMultiplayer>();
         if (shootButton != null)
         {
             shootButton.CancleTarget();
         }
-        //StartCoroutine(Check());
     }
-
-    //IEnumerator Check()
-    //{
-    //    yield return new WaitForSeconds(2);
-    //    var winPanel = _interface.GetComponent<WinPanel>();
-    //    if (winPanel != null)
-    //        winPanel.CheckEnemies();
-    //}
 }

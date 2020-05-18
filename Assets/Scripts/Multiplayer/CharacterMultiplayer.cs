@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Pun;
 using System;
 using UnityEngine.UI;
@@ -8,8 +6,6 @@ using UnityEngine.UI;
 public class CharacterMultiplayer : Character, IPunObservable
 {
     public GameManager GameManager;
-    //public List<GameObject> _players = new List<GameObject>();
-    //public GameObject Interface;
     private bool _isAlive = true;
     [SerializeField] private Text _hp;
 

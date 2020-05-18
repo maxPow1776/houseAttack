@@ -12,14 +12,12 @@ public class GunForMultiplayer : MonoBehaviour
 
     public void StartShoot()
     {
-        //InvokeRepeating("Shoot", 0, 2);
         StartCoroutine(Shoot());
     }
 
     public void OneShoot()
     {
         var bullet = PhotonNetwork.Instantiate(_bullet.name, Vector3.zero, Quaternion.identity);
-        Debug.Log(bullet);
         var bulletNavMeshAgent = bullet.GetComponent<NavMeshAgent>();
         if (bulletNavMeshAgent != null)
         {
@@ -31,11 +29,6 @@ public class GunForMultiplayer : MonoBehaviour
             currentBullet.BulletShoot(Target);
         }
     }
-
-    //public void StopShoot()
-    //{
-    //    CancelInvoke("Shoot");
-    //}
 
     IEnumerator Shoot()
     {

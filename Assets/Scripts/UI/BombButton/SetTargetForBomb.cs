@@ -6,7 +6,6 @@ public class SetTargetForBomb : MonoBehaviour
     [SerializeField] private GameObject[] _players;
     [SerializeField] private Button _bombButton;
 
-
     private void OnMouseDown()
     {
         for (int i = 0; i < _players.Length; i++)

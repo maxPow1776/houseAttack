@@ -11,7 +11,6 @@ public class Gun : MonoBehaviour
 
     public void StartShoot()
     {
-        //InvokeRepeating("Shoot", 0, 2);
         StartCoroutine(Shoot());
     }
 
@@ -29,11 +28,6 @@ public class Gun : MonoBehaviour
             currentBullet.BulletShoot(Target);
         }
     }
-
-    //public void StopShoot()
-    //{
-    //    CancelInvoke("Shoot");
-    //}
 
     IEnumerator Shoot()
     {
