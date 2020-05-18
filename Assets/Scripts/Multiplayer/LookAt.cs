@@ -9,7 +9,8 @@ public class LookAt : MonoBehaviour
 
     public void Start()
     {
-        if(gameObject.GetComponent<PhotonView>().IsMine)
+        var photonView = gameObject.GetComponent<PhotonView>();
+        if(photonView.IsMine)
             _target = FindObjectOfType<Camera>().transform;
     }
 

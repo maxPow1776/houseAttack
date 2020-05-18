@@ -16,7 +16,8 @@ public class EnemyController : MonoBehaviour
         {
             patrol.CanPatrol = false;
         }
-        gameObject.transform.LookAt(Rival.transform.position);
+        if(Rival != null)
+            gameObject.transform.LookAt(Rival.transform.position);
         _gun.transform.position = _placeForGun.transform.position;
         var rotation = gameObject.transform.rotation;
         _gun.transform.rotation = rotation;
